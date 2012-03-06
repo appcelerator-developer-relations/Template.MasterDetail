@@ -12,22 +12,19 @@ function ApplicationWindow() {
 	});
 		
 	//construct UI
-	var masterView = new MasterView(),
-		detailView = new DetailView();
-		
-	//create master view container
+	var masterView = new MasterView();
 	self.add(masterView);
-	
-	//create detail view container
-	var detailContainerWindow = Ti.UI.createWindow({
-		title:'Product Details',
-		navBarHidden:false,
-		backgroundColor:'#ffffff'
-	});
-	detailContainerWindow.add(detailView);
-    
+
 	//add behavior for master view
 	masterView.addEventListener('itemSelected', function(e) {
+		//create detail view container
+		var detailView = new DetailView();
+		var detailContainerWindow = Ti.UI.createWindow({
+			title:'Product Details',
+			navBarHidden:false,
+			backgroundColor:'#ffffff'
+		});
+		detailContainerWindow.add(detailView);
 		detailView.fireEvent('itemSelected',e);
 		detailContainerWindow.open();
 	});
