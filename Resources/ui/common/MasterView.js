@@ -1,5 +1,5 @@
 //Master View Component Constructor
-exports.MasterView = function() {
+function MasterView() {
 	//create object instance, parasitic subclass of Observable
 	var self = Ti.UI.createView({
 		backgroundColor:'white'
@@ -30,3 +30,5 @@ exports.MasterView = function() {
 	
 	return self;
 };
+
+module.exports = MasterView;

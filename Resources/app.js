@@ -29,16 +29,16 @@ if (Ti.version < 1.8 ) {
 	
 	var Window;
 	if (isTablet) {
-		Window = require('ui/tablet/ApplicationWindow').ApplicationWindow;
+		Window = require('ui/tablet/ApplicationWindow');
 	}
 	else {
 		// iPhone makes use of the platform-specific navigation controller,
 		// all other platforms follow a similar UI pattern
 		if (osname === 'iphone') {
-			Window = require('ui/handheld/ios/ApplicationWindow').ApplicationWindow;
+			Window = require('ui/handheld/ios/ApplicationWindow');
 		}
 		else {
-			Window = require('ui/handheld/android/ApplicationWindow').ApplicationWindow;
+			Window = require('ui/handheld/android/ApplicationWindow');
 		}
 	}
 	new Window().open();
