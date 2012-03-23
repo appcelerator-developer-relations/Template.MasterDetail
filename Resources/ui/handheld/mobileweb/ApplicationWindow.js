@@ -24,8 +24,8 @@ function ApplicationWindow() {
 	});
 	detailContainerWindow.add(detailView);
 	
-	//create iOS specific NavGroup UI
-	var navGroup = Ti.UI.iPhone.createNavigationGroup({
+	//create Mobile Web specific NavGroup UI
+	var navGroup = Ti.UI.MobileWeb.createNavigationGroup({
 		window:masterContainerWindow
 	});
 	self.add(navGroup);
