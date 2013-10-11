@@ -4,7 +4,7 @@ function MasterView() {
 	var self = Ti.UI.createView({
 		backgroundColor:'white'
 	});
-	
+
 	//some dummy data for our table view
 	var tableData = [
 		{title:'Apples', price:'1.25', hasChild:true, color: '#000'},
@@ -14,12 +14,12 @@ function MasterView() {
 		{title:'Pears', price:'1.40', hasChild:true, color: '#000'},
 		{title:'Kiwis', price:'1.00', hasChild:true, color: '#000'}
 	];
-	
+
 	var table = Ti.UI.createTableView({
 		data:tableData
 	});
 	self.add(table);
-	
+
 	//add behavior
 	table.addEventListener('click', function(e) {
 		self.fireEvent('itemSelected', {
@@ -27,7 +27,7 @@ function MasterView() {
 			price:e.rowData.price
 		});
 	});
-	
+
 	return self;
 };
 
